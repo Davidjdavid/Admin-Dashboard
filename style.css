@@ -3,15 +3,24 @@
     margin: 0;
 }
 
+body {
+    background-color: lightblue;
+}
+
 img {
     width: 30px;
 }
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 1fr 4fr;
     height: 100vh;
+    max-width: 100%;
+}
+
+.title {
+    text-align: center;
 }
 
 .header {
@@ -23,6 +32,7 @@ img {
     background-color: lightblue;
     display: grid;
     grid-template-rows: auto 1fr;
+    height: 100vh;
 }
 
 .firstLinks, .secondLinks {
@@ -72,6 +82,13 @@ a {
     background-color: paleturquoise;
 }
 
+.anouncementBox, .trendingBox {
+    padding: 20px;
+    background-color: aliceblue;
+    margin: 15px;
+    border-radius: 5px;
+}
+
 .accountment {
     border-style: dotted;
     padding: 12px;
@@ -86,6 +103,7 @@ a {
     margin: 12px;
     background-color: antiquewhite;
     text-align: center;
+    display: flex;
 }
 
 .trendingArea {
@@ -116,6 +134,33 @@ a {
 
 .mainArea {
     display: grid;
-    grid-template-rows: 1fr 10fr;
+    grid-template-rows: 1fr 6fr;
     height: 100vh;
+}
+
+.searchArea {
+    margin: 20px;
+}
+
+.searchBar {
+    border-radius: 20px;
+    border: none;
+    height: 20px;
+    min-width: 40px;
+    width: 300px;
+}
+
+.userAccountSection {
+    margin: 20px;
+}
+
+.userAccountInfo, .buttonArea {
+    margin: 20px;
+}
+
+button {
+    background-color: green;
+    border-style: none;
+    border-radius: 30px;
+    padding: 10px;
 }
