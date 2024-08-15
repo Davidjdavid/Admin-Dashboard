@@ -71,7 +71,18 @@ a {
     margin: 12px;
     background-color: antiquewhite;
     text-align: center;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icons > * {
+    margin-left: 5px;
 }
 
 .announcementArea {
