@@ -60,10 +60,9 @@ a {
 
 .projectArea {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(2, clamp(10px, 50%, 500px));
+    grid-template-columns: repeat(auto-fit, 350px);
+    grid-template-rows: repeat(auto-fit, 250px);
     justify-content: center;
-    align-content: center;
 }
 
 .project {
@@ -72,6 +71,7 @@ a {
     margin: 12px;
     background-color: antiquewhite;
     text-align: center;
+    height: auto;
 }
 
 .announcementArea {
