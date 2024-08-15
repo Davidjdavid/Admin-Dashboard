@@ -1,10 +1,14 @@
+:root {
+    --itemBackground: white;
+}
+
 * {
     padding: 0;
     margin: 0;
 }
 
 body {
-    background-color: lightblue;
+    background-color: #e2e8f0;
 }
 
 img {
@@ -54,26 +58,26 @@ a {
 
 .mainContent {
     display: grid;
-    background-color: lightcoral;
+    background-color: #e2e8f0;
     grid-template-columns: 3fr auto
 }
 
 .projectArea {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 350px);
-    grid-template-rows: repeat(auto-fit, 250px);
+    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-rows: repeat(auto-fit, 225px);
     justify-content: center;
 }
 
 .project {
-    border-style: dotted;
     padding: 12px;
     margin: 12px;
-    background-color: antiquewhite;
+    background-color: var(--itemBackground);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
 .icons {
@@ -87,29 +91,23 @@ a {
 
 .announcementArea {
     grid-column: 2 / 3;
-    background-color: paleturquoise;
 }
 
-.anouncementBox, .trendingBox {
-    padding: 20px;
-    background-color: aliceblue;
-    margin: 15px;
-    border-radius: 5px;
+.announcementBox, .trendingBox {
+    padding: 12px;
+    background-color: var(--itemBackground);
+    border-radius: 10px;
 }
 
 .accountment {
-    border-style: dotted;
     padding: 12px;
-    margin: 12px;
-    background-color: antiquewhite;
+    background-color: var(--itemBackground);
     text-align: center;
 }
 
 .trending {
-    border-style: dotted;
     padding: 12px;
-    margin: 12px;
-    background-color: antiquewhite;
+    background-color: var(--itemBackground);
     text-align: center;
     display: flex;
 }
@@ -117,7 +115,7 @@ a {
 .trendingArea {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-color: lightyellow;
+    background-color: #e2e8f0;
 }
 
 .topHeaderArea {
@@ -171,4 +169,8 @@ button {
     border-style: none;
     border-radius: 30px;
     padding: 10px;
+}
+
+.rightSide {
+    margin: 12px;
 }
