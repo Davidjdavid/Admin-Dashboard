@@ -1,19 +1,42 @@
 :root {
-    --itemBackground: white;
+    --shadow: 5px 5px 5px #c2b5b786;
+    --colorLight: #F5E3E0;
+    --colorLightMid: #E8B4BC;
+    --colorMid: #D282A6;
+    --colorHighMid: #6E4555;
+    --colorHigh: #3A3238;
 }
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.firstLinks a:hover, .secondLinks a:hover {
+    background-color: var(--colorMid);
+}
+
+.firstLinks, .secondLinks {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.firstLinks a, .secondLinks a {
+    padding: 5px;
+}
+
 
 * {
     padding: 0;
     margin: 0;
+    font-style: var(--colorLight);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 body {
-    background-color: #e2e8f0;
+    background-color: var(--colorLight);
 }
 
-img {
-    width: 30px;
-}
 
 .content {
     display: grid;
@@ -28,56 +51,59 @@ img {
 }
 
 .header {
-    background-color: lightgreen;
+    background-color: var(--colorMid);
     display: grid;
 }
 
 .sidebar {
-    background-color: lightblue;
+    background-color: var(--colorHighMid);
     display: grid;
     grid-template-rows: auto 1fr;
     height: 100vh;
 }
 
-.firstLinks, .secondLinks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 a {
     margin-top: 10px;
     margin-bottom: 10px;
     text-decoration: none;
+    color: var(--colorLight);
+    font-style: italic;
 }
 
 .sidebarLinks {
     display: grid;
     grid-template-rows: repeat(2, clamp(10px, 50%, 300px));
+    text-align: left;
 }
 
 .mainContent {
     display: grid;
-    background-color: #e2e8f0;
+    background-color: var(--colorLight);
     grid-template-columns: 3fr auto
 }
 
 .projectArea {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
-    grid-template-rows: repeat(auto-fit, 225px);
+    grid-template-rows: repeat(3, 225px);
     justify-content: center;
 }
 
 .project {
     padding: 12px;
     margin: 12px;
-    background-color: var(--itemBackground);
-    text-align: center;
+    background-color: var(--colorLightMid);
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
+}
+
+
+.projectHeader {
+    align-self: center;
 }
 
 .icons {
@@ -95,27 +121,19 @@ a {
 
 .announcementBox, .trendingBox {
     padding: 12px;
-    background-color: var(--itemBackground);
+    background-color: var(--colorLightMid);
     border-radius: 10px;
 }
 
-.accountment {
+.announcement {
     padding: 12px;
-    background-color: var(--itemBackground);
     text-align: center;
 }
 
 .trending {
     padding: 12px;
-    background-color: var(--itemBackground);
     text-align: center;
     display: flex;
-}
-
-.trendingArea {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    background-color: #e2e8f0;
 }
 
 .topHeaderArea {
@@ -134,8 +152,12 @@ a {
 }
 
 .userAccountSection {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    margin-left: 5px;
+}
+
+.userAccountSection > * {
+    margin-left: 20px;
 }
 
 .mainArea {
@@ -154,23 +176,77 @@ a {
     height: 20px;
     min-width: 40px;
     width: 300px;
+    background-color: var(--colorLight);
 }
 
 .userAccountSection {
     margin: 10px;
+    padding: 10px;
+}
+
+.title {
+    margin-top: 20px;
 }
 
 .userAccountInfo, .buttonArea {
     margin: 10px;
 }
 
+.buttonArea {
+    display: flex;
+    justify-content: right;
+}
+
+.buttonArea > button {
+    margin-left: 20px;
+    padding: 15px;
+}
+
 button {
-    background-color: green;
+    background-color: var(--colorHighMid);
     border-style: none;
     border-radius: 30px;
     padding: 10px;
+    color: var(--colorLight);
+}
+
+button:hover {
+    background-color: var(--colorLightMid);
+    box-shadow: var(--shadow);
+    color: var(--colorHigh);
 }
 
 .rightSide {
     margin: 12px;
+}
+
+.project, .announcementBox, .trendingBox, .header {
+    box-shadow: var(--shadow);
+    margin-bottom: 10px;
+}
+
+.projectAreaHolder {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+.announcement:not(:last-child), .trending:not(:last-child) {
+    border-bottom: dotted var(--colorLight);
+}
+
+.trending > img {
+    margin-right: 10px;
+    border-radius: 50%;
+    border: solid 3px var(--colorHighMid)
+}
+
+.trending > div > p {
+    text-align: left;
+    margin: 10px;
+}
+
+.userAccountInfo {
+    display: flex;
+    flex-direction: column;
 }
