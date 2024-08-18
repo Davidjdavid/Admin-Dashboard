@@ -1,5 +1,6 @@
 :root {
     --shadow: 5px 5px 5px #c2b5b786;
+    --shadowReverse: inset 0px 0px 5px #c2b5b786;
     --colorLight: #F5E3E0;
     --colorLightMid: #E8B4BC;
     --colorMid: #D282A6;
@@ -12,7 +13,11 @@ h2 {
 }
 
 .firstLinks a:hover, .secondLinks a:hover {
-    background-color: var(--colorMid);
+    background-color: var(--colorLightMid);
+    text-decoration: none;
+    color: var(--colorHigh);
+    font-weight: bold;
+    font-size: large;
 }
 
 .firstLinks, .secondLinks {
@@ -23,6 +28,12 @@ h2 {
 
 .firstLinks a, .secondLinks a {
     padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--colorLight);
+    font-weight: bold;
+    font-size: large;
 }
 
 
@@ -40,9 +51,8 @@ body {
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: 1fr 4fr;
-    height: 100vh;
+    grid-template-columns: auto 2fr;
+    grid-template-rows: auto;
     max-width: 100%;
 }
 
@@ -59,40 +69,35 @@ body {
     background-color: var(--colorHighMid);
     display: grid;
     grid-template-rows: auto 1fr;
-    height: 100vh;
-}
+    height: 100%;
+    min-height: 100vh;
 
-
-a {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: var(--colorLight);
-    font-style: italic;
 }
 
 .sidebarLinks {
     display: grid;
-    grid-template-rows: repeat(2, clamp(10px, 50%, 300px));
+    grid-template-rows: repeat(2, clamp(100px, 50%, 400px));
     text-align: left;
 }
 
 .mainContent {
     display: grid;
     background-color: var(--colorLight);
-    grid-template-columns: 3fr auto
+    grid-template-columns: 3fr auto;
 }
 
 .projectArea {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-columns: repeat(auto-fit, 325px);
     grid-template-rows: repeat(3, 225px);
     justify-content: center;
+    
 }
 
 .project {
     padding: 12px;
     margin: 12px;
+    border-left: solid 12px var(--colorHighMid);
     background-color: var(--colorLightMid);
     text-align: left;
     display: flex;
@@ -138,7 +143,7 @@ a {
 
 .topHeaderArea {
     display: grid;
-    grid-template-columns: 2fr auto;
+    grid-template-columns: 1fr auto;
 }
 
 .bottomHeaderArea {
@@ -153,17 +158,17 @@ a {
 
 .userAccountSection {
     display: flex;
-    margin-left: 5px;
+    margin: 10px;
+    padding: 10px;
 }
 
 .userAccountSection > * {
-    margin-left: 20px;
+    margin: 10px;
 }
 
 .mainArea {
     display: grid;
-    grid-template-rows: 1fr 6fr;
-    height: 100vh;
+    grid-template-rows: auto;
 }
 
 .searchArea {
@@ -179,13 +184,9 @@ a {
     background-color: var(--colorLight);
 }
 
-.userAccountSection {
-    margin: 10px;
-    padding: 10px;
-}
-
+   
 .title {
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .userAccountInfo, .buttonArea {
@@ -210,12 +211,6 @@ button {
     color: var(--colorLight);
 }
 
-button:hover {
-    background-color: var(--colorLightMid);
-    box-shadow: var(--shadow);
-    color: var(--colorHigh);
-}
-
 .rightSide {
     margin: 12px;
 }
@@ -229,7 +224,6 @@ button:hover {
     margin-top: 10px;
     margin-left: 10px;
 }
-
 
 .announcement:not(:last-child), .trending:not(:last-child) {
     border-bottom: dotted var(--colorLight);
@@ -249,4 +243,25 @@ button:hover {
 .userAccountInfo {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
+}
+
+.icons > * {
+    padding: 5px;
+    background-color: var(--colorLight);
+    border-radius: 15px;
+}
+
+
+button:hover {
+    background-color: var(--colorLightMid);
+    box-shadow: var(--shadow);
+    color: var(--colorHigh);
+}
+
+
+.icons > *:active, button:active {
+    background-color: var(--colorHighMid);
+    color: var(--colorLight);
+    box-shadow: var(--shadowReverse);
 }
